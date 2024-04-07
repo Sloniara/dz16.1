@@ -63,7 +63,7 @@ class Category:
         if not isinstance(product, (Product, Smartphone, LawnGrass)):
             raise TypeError("Можно добавлять только объекты классов Product, Smartphone и LawnGrass")
         if product.quantity == 0:
-            raise ZeroQuantityError
+            raise ZeroQuantityError("Нельзя добавить товар с нулевым количеством!")
         self.__products.append(product)
 
     def get_products_info(self):
@@ -82,6 +82,7 @@ class Category:
             return total_price / total_count
         except ZeroDivisionError:
             return 0
+
 
 
 
